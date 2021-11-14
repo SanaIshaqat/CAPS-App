@@ -1,0 +1,25 @@
+{
+  "name": "CAPS-App",
+  "version": "1.0.0",
+  "description": "",
+  "main": "caps.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SanaIshaqat/CAPS-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SanaIshaqat/CAPS-App/issues"
+  },
+  "homepage": "https://github.com/SanaIshaqat/CAPS-App#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "faker": "^5.5.3",
+    "jest": "^27.3.1"
+  }
+}
