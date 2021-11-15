@@ -59,19 +59,19 @@ describe('Testing Events', () => {
         consoleSpy = jest.spyOn(console, 'log').mockImplementation();
     });
       
-    xit('pickup event is Working', async () => {
+    it('pickup event is Working', async () => {
         caps.emit('pickup', orderDetails);
         await consoleSpy();
         expect(consoleSpy).toHaveBeenCalled();
     });
 
-    xit('in-transit event is Working', async () => {
+    it('in-transit event is Working', async () => {
         caps.emit('in-transit', orderDetails);
         await consoleSpy();
         expect(consoleSpy).toHaveBeenCalled();
     });
 
-    xit('delivered event is Working', async () => {
+    it('delivered event is Working', async () => {
         caps.emit('delivered', orderDetails);
         await consoleSpy();
         expect(consoleSpy).toHaveBeenCalled();
