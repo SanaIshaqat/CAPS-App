@@ -1,11 +1,19 @@
 'use strict';
 
-require('dotenv').config();
-const events = require('../event-pool');
+// require('dotenv').config();
+// const events = require('../event-pool');
 var faker = require('faker');
 
+
+const port = 3000;
+const io = require('socket.io-client');
+const host = `http://localhost:${port}`
+const socket = io.connect(`${host}/caps`);
 const storeName ='SI-FlowerShop';
-events.on('delivered', thankYouNote);
+socket.emit('service',storeName );
+socket.on('delivered', thankYouNote);
+
+// events.on('delivered', thankYouNote);
 
 
 function thankYouNote(payload) {
@@ -21,8 +29,8 @@ setInterval(() => {
       Address: faker.address.streetAddress()
     }
   
-    events.emit('pickup', orderDetails);
-  }, 4000);
+    socket.emit('pickup', orderDetails);
+  }, 5000);
 
   
 
