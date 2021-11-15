@@ -42,7 +42,7 @@ Author: Sana Ishaqat
 
 [back-end (heroku) For the Upcoming Labs](https://sana-CAPS-APP-401.herokuapp.com)
 
-[PR Link](https://github.com/SanaIshaqat/CAPS-App/pull/1)
+[PR Link](https://github.com/SanaIshaqat/CAPS-App/pull/3)
 
 ### Setup (In Upcoming Labs)
 .env requirements
