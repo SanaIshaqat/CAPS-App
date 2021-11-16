@@ -71,43 +71,6 @@ Unit Tests: npm run test
 
 ![](Lab12AllPassed.PNG)
 
-## LAB - 12
-### Socket.io
-Author: Sana Ishaqat
-
-[tests report (actions)](https://github.com/SanaIshaqat/CAPS-App/actions)
-
-[back-end (heroku) For the Upcoming Labs](https://sana-CAPS-APP-401.herokuapp.com)
-
-[PR Link](https://github.com/SanaIshaqat/CAPS-App/pull/3)
-
-### Setup (In Upcoming Labs)
-.env requirements
-PORT - Port Number
-
-
-### Running the app (In Upcoming Labs)
-npm run dev
-Endpoint: /status
-Returns Object
-{
-  "status": "running",
-  "port": 3030,
-  "domain": "https://sana-CAPS-APP-401.herokuapp.com"
-}
-### UML
-
-![](UML12.jpg)
-
-### Tests
-Unit Tests: npm run test
-
-![](Lab12Caps.PNG)
-
-![](Lab12DriverVendor.PNG)
-
-![](Lab12AllPassed.PNG)
-
 ## LAB - 13
 ### Queue Server 
 Author: Sana Ishaqat
