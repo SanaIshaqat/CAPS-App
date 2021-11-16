@@ -9,7 +9,7 @@ const io = require('socket.io-client');
 const host = `http://localhost:${port}`
 const socket = io.connect(`${host}/caps`);
 
-const storeName ='SI-FlowerShop';
+const storeName ='1-800-flowers';
 //join room
 socket.emit('service',storeName );
 
@@ -26,7 +26,7 @@ socket.emit('get-all', vendorDetails);
 socket.on('message', message => {
     if(message.payload.event === 'delivered' && message.payload.payload.store === storeName) {
         console.log('message',message)
-        thankYouNote( JSON.stringify(message));
+        thankYouNote(message);
     }
     if(message.payload.event === 'in-transit' && message.payload.payload.store === storeName) {
       socket.emit('received', message.id);
@@ -47,15 +47,16 @@ setInterval(() => {
       Address: faker.address.streetAddress()
     }
   
-    socket.emit('pickup', JSON.stringify(orderDetails));
+    socket.emit('pickup', orderDetails);
   }, 5000);
 
-  
+  socket.on('delivered', thankYouNote);
+
 function thankYouNote(message) {
-    console.log(`${message.payload.payload.Store}VENDOR: Thank you for delivering order No: ${message.payload.payload.OrderId}`); 
+    console.log(`${message.payload.payload.store}VENDOR: Thank you for delivering order No: ${message.payload.payload.OrderId}`); 
     console.log(`VENDOR: Thank You ${message.payload.payload.Customer} Enjoy Your Purchase !`)   
-    socket.emit('received', JSON.stringify(message.id)); 
+    
+  socket.emit('received', JSON.stringify(message.id)); 
+
   }
-
-
 
